@@ -1,11 +1,11 @@
-module PowerDigitSum (recursionMethod, tailRecursionMethod, mapMethod   ) where
+module PowerDigitSum (recursionMethod, tailRecursionMethod, mapMethod) where
 
 recursionMethod :: Integer -> Integer
 recursionMethod num =
-    let recursionHelper :: Integer -> Integer
-        recursionHelper 0 = 0
-        recursionHelper n = (n `mod` 10) + recursionHelper (n `div` 10)
-    in recursionHelper num
+  let recursionHelper :: Integer -> Integer
+      recursionHelper 0 = 0
+      recursionHelper n = (n `mod` 10) + recursionHelper (n `div` 10)
+   in recursionHelper num
 
 tailRecursionMethod :: Integer -> Integer
 tailRecursionMethod num =

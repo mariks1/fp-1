@@ -1,6 +1,5 @@
 module LatticePaths (routesTailRecursive) where
 
-
 routesTailRecursive :: Int -> Int -> Int
 routesTailRecursive m n = go m n 1 1
   where

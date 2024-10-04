@@ -25,8 +25,8 @@ source-repository head
 
 library
   exposed-modules:
-      ReciprocalCycles
-      SmallestMultiple
+      LatticePaths
+      PowerDigitSum
   other-modules:
       Paths_lab1
   autogen-modules:
@@ -60,8 +60,8 @@ test-suite lab1-test
   type: exitcode-stdio-1.0
   main-is: Spec.hs
   other-modules:
-      ReciprocalCyclesTests
-      SmallestMultipleTests
+      LatticePathsTests
+      PowerDigitSumTests
       Paths_lab1
   autogen-modules:
       Paths_lab1
