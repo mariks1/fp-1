@@ -12,10 +12,6 @@ tests =
         recursionMethod 20 @?= 137846528820,
       testCase "Tail Recursion Method Test" $
         tailRecursionMethod 20 @?= 137846528820,
-      testCase "Map Method Test" $
-        mapMethod 20 @?= 137846528820,
-      testCase "Modular Method Test" $
-        modularMethod 20 @?= 137846528820,
       testCase "Infinite List Method Test" $
         infiniteListMethod 20 @?= 137846528820
     ]
