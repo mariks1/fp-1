@@ -1,4 +1,5 @@
 import qualified PowerDigitSumTests
+import qualified LatticePathsTests
 import Test.Tasty
 
 main :: IO ()
@@ -8,5 +9,6 @@ tests :: TestTree
 tests =
   testGroup
     "All tests"
-    [ PowerDigitSumTests.tests
+    [ PowerDigitSumTests.tests,
+      LatticePathsTests.tests
     ]

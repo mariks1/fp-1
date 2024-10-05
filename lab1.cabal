@@ -60,6 +60,7 @@ test-suite lab1-test
   type: exitcode-stdio-1.0
   main-is: Spec.hs
   other-modules:
+      LatticePathsTests
       PowerDigitSumTests
       Paths_lab1
   autogen-modules:

@@ -1,13 +1,36 @@
-module LatticePaths (routesTailRecursive) where
+module LatticePaths (recursionMethod, tailRecursionMethod, mapMethod, modularMethod, infiniteListMethod) where
 
-routesTailRecursive :: Int -> Int -> Int
-routesTailRecursive m n = go m n 1 1
+recursionMethod :: Integer -> Integer
+recursionMethod n = binomial (2 * n) n
   where
-    go 0 0 acc _ = acc
-    go x 0 acc path = go (x - 1) 0 acc (path + 1)
-    go 0 y acc path = go 0 (y - 1) acc (path + 1)
-    go x y acc path = go (x - 1) y (acc + 1) path + go x (y - 1) acc path
+    factorial 0 = 1
+    factorial x = x * factorial (x - 1)
 
--- To find the number of routes in a 20x20 grid
-countRoutesTailRecursive :: Int
-countRoutesTailRecursive = routesTailRecursive 20 20
+    binomial n k = factorial n `div` (factorial k * factorial (n - k))
+
+tailRecursionMethod :: Integer -> Integer
+tailRecursionMethod n =
+  let factorial 0 = 1
+      factorial x = x * factorial (x - 1)
+   in factorial (2 * n) `div` (factorial n * factorial n)
+
+mapMethod :: Integer -> Integer
+mapMethod n = binomial (2 * n) n
+  where
+    factorial x = product (map id [1 .. x])
+
+    binomial n k = factorial n `div` (factorial k * factorial (n - k))
+
+modularMethod :: Integer -> Integer
+modularMethod n = binomial (2 * n) n
+  where
+    factorial x = foldl (*) 1 [1 .. x]
+
+    binomial n k = factorial n `div` (factorial k * factorial (n - k))
+
+infiniteListMethod :: Integer -> Integer
+infiniteListMethod n = binomial (2 * n) n
+  where
+    factorial x = product [1 .. x]
+
+    binomial n k = factorial n `div` (factorial k * factorial (n - k))

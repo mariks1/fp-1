@@ -13,5 +13,9 @@ tests =
       testCase "Tail Recursion Method Test" $
         tailRecursionMethod (2 ^ 1000) @?= 1366,
       testCase "Map Method Test" $
-        mapMethod (2 ^ 1000) @?= 1366
+        mapMethod (2 ^ 1000) @?= 1366,
+      testCase "Modular Method Test" $
+        modularMethod (2 ^ 1000) @?= 1366,
+      testCase "Infinite List Method Test" $
+        infiniteListMethod 1000 @?= 1366
     ]

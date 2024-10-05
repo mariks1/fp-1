@@ -3,7 +3,6 @@ module Main
   )
 where
 
-import LatticePaths
 import PowerDigitSum
 
 main :: IO ()
