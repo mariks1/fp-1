@@ -1,5 +1,5 @@
-import qualified PowerDigitSumTests
 import qualified LatticePathsTests
+import qualified PowerDigitSumTests
 import Test.Tasty
 
 main :: IO ()

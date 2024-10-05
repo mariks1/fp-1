@@ -17,7 +17,7 @@ tailRecursionMethod num =
    in tailRecursionHelper num 0
 
 mapMethod :: Integer -> Integer
-mapMethod n = sum . map (fromIntegral . digitToInt) . show $ n
+mapMethod = sum . map (fromIntegral . digitToInt) . show
 
 modularMethod :: Integer -> Int
 modularMethod n = sumDigits (digits n)
@@ -26,7 +26,7 @@ modularMethod n = sumDigits (digits n)
     digits = map digitToInt . show
 
     sumDigits :: [Int] -> Int
-    sumDigits = foldr (+) 0
+    sumDigits = sum
 
 infiniteListMethod :: Int -> Int
 infiniteListMethod n = sumDigits (powersOfTwo !! (n - 1))

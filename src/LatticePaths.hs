@@ -1,4 +1,4 @@
-module LatticePaths (recursionMethod, tailRecursionMethod, mapMethod, modularMethod, infiniteListMethod) where
+module LatticePaths (recursionMethod, tailRecursionMethod, infiniteListMethod) where
 
 recursionMethod :: Integer -> Integer
 recursionMethod n = binomial (2 * n) n
@@ -13,20 +13,6 @@ tailRecursionMethod n =
   let factorial 0 = 1
       factorial x = x * factorial (x - 1)
    in factorial (2 * n) `div` (factorial n * factorial n)
-
-mapMethod :: Integer -> Integer
-mapMethod n = binomial (2 * n) n
-  where
-    factorial x = product (map id [1 .. x])
-
-    binomial n k = factorial n `div` (factorial k * factorial (n - k))
-
-modularMethod :: Integer -> Integer
-modularMethod n = binomial (2 * n) n
-  where
-    factorial x = foldl (*) 1 [1 .. x]
-
-    binomial n k = factorial n `div` (factorial k * factorial (n - k))
 
 infiniteListMethod :: Integer -> Integer
 infiniteListMethod n = binomial (2 * n) n
